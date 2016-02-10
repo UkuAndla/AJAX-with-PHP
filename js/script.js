@@ -1,11 +1,12 @@
-
 $(document).ready(function(){
 
     $("#sub").click(function(){
         var user_name = $("#name").val();
+        var user_email = $("#email").val();
+        var user_pass = $("#pass").val();
         console.log(user_name);
-        $.post("test.php",{name:user_name},function(data){
-            $("#result").text(data);
+        $.post("test.php",{name:user_name,email:user_email,pass:user_pass},function(data){
+            $("#result").html(data);
         });
     });
 
